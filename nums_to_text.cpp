@@ -8,7 +8,7 @@ const char *NumsToText::read_group(int gr)
 {
 	// The buffer for the text representation of the group.
 	static char buf[IDS_BUFSIZE];
-        // Initialize the buffer.
+	// Initialize the buffer.
 	strcpy_s(buf, "");
 
 	// Read the first digit.
@@ -30,7 +30,7 @@ const char *NumsToText::read_group(int gr)
 	// Read the second digit.
 	strcat_s(buf, tens[gr % 100 / 10]);
 
-	// If zero is the second digit, add the word "and" 
+	// If zero is the second digit, add the word "and"
 	// (100-109, 200-209, ...)
 	if (gr >= 100 && gr % 100 <= 9 && gr % 100 >= 1)
 		strcat_s(buf, and_txt);
@@ -38,7 +38,7 @@ const char *NumsToText::read_group(int gr)
 	// Read the last digit.
 	strcat_s(buf, units[gr % 10]);
 
-  // Return the buffer.
+	// Return the buffer.
 	return buf;
 }
 
@@ -50,12 +50,12 @@ const char *NumsToText::read_number(long int user_input)
 	// The buffer for storing the group of 3 digits.
 	static char buf[IDS_BUFSIZE];
 
-  // The number of 3 digits itself.
+	// The number of 3 digits itself.
 	int gr;
 	// Count the group of 3 digits.
 	int gr_count = 0;
 
-  // Initialize the buffer.
+	// Initialize the buffer.
 	strcpy_s(text, "");
 
 	while (user_input > 0L)
@@ -73,7 +73,7 @@ const char *NumsToText::read_number(long int user_input)
 			if (gr == 1)
 				strcat_s(buf, groups[gr_count]);
 			else
-				strcat_s(buf, groups2[gr_count]); 
+				strcat_s(buf, groups2[gr_count]);
 
 			// Add to the buffer
 			strcat_s(buf, text);
