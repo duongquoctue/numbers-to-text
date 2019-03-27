@@ -1,17 +1,19 @@
 #include <iostream>
 #include <string>
-#include "num2txt.h"
-
+#include "nums_to_text.h"
 
 using namespace std;
 
-Num2Txt num2txt;
+// Initialize the object.
+NumsToText nums_to_text;
 
-int main() {
-
-	long int user_input = num2txt.input();
-	const char * result = num2txt.group_count(user_input);
-
+int main()
+{
+	// Require the user input and store it for later use.
+	long int user_input = nums_to_text.input();
+	// Store the result for displaying on the screen.
+	const char *result = nums_to_text.read_number(user_input);
+	// Display the result
 	cout << "The text representation is: " << result << endl;
 
 	getchar();
