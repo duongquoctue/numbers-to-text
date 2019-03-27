@@ -7,7 +7,7 @@
 const char *NumsToText::read_group(int gr)
 {
 	// The buffer for the text representation of the group.
-	static char buf[IDS_BUFSIZE];
+	static char buf[256];
 	// Initialize the buffer.
 	strcpy_s(buf, "");
 
@@ -17,7 +17,7 @@ const char *NumsToText::read_group(int gr)
 	// For 2 digits number, add the special case (11,12,13..)
 	if (gr >= 10)
 	{
-		for (int i = 0; i < IDS_SIZE_OF_SPECIAL_NUMBERS_ARRAY; i++)
+		for (int i = 0; i < 9; i++)
 		{
 			if (gr % 100 == special[i])
 			{
@@ -46,9 +46,9 @@ const char *NumsToText::read_group(int gr)
 const char *NumsToText::read_number(long int user_input)
 {
 	// The buffer for storing the whole number.
-	static char text[IDS_BUFSIZE];
+	static char text[256];
 	// The buffer for storing the group of 3 digits.
-	static char buf[IDS_BUFSIZE];
+	static char buf[256];
 
 	// The number of 3 digits itself.
 	int gr;
