@@ -8,7 +8,7 @@ const char *NumsToText::read_group(int gr)
 {
 	// The buffer for the text representation of the group.
 	static char buf[IDS_BUFSIZE];
-  // Initialize the buffer.
+        // Initialize the buffer.
 	strcpy_s(buf, "");
 
 	// Read the first digit.
