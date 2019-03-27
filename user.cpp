@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Make the user type in the number.
+// Make the user type the number.
 long int User::input()
 {
 	long int user_input;
